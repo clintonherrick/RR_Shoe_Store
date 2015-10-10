@@ -1,0 +1,44 @@
+<div class="container"><h1> All of the Brands </span></h1>
+
+<form action="/brands" method="post">
+  <label for="brand_name">Brand Name: </label>
+  <input id="brand_name" name="brand_name" type="text">
+
+  <button type="submit" class="btn btn-danger btn-lg">Add Brand</span></button>
+</form>
+
+</div>
+
+
+<div class="container">
+
+<% if @brands.any? %>
+
+<p>Add another store that carries this brand</p>
+<ul>
+<% @brands.each do |brand| %>
+
+<li><a href="/brands/<%= brand.id %>"><%= brand.brand_name %></a></li>
+
+
+
+  <% end %>
+</ul>
+
+ <% else %>
+
+ <p> you must enter a brand! </p>
+
+ <% end %>
+
+
+
+
+
+
+ <p><a href="/stores">All stores</a></p>
+
+ </br>
+
+ <p><a href="/">Home</a></p>
+</div>
